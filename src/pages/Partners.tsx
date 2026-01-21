@@ -1,5 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
+import { LogosSection } from "@/components/partners/LogosSection";
 import { 
   GraduationCap, 
   ArrowRight,
@@ -85,6 +86,9 @@ export default function Partners() {
           </div>
         </div>
       </section>
+
+      {/* Logos Section */}
+      <LogosSection />
 
       {/* Partner types */}
       <section className="section-padding">

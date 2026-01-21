@@ -63,28 +63,26 @@ export default function CVBuilder() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="section-padding gradient-hero">
+      <section className="section-padding bg-[#F5F5F0]">
         <div className="container-levely">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-medium mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-lime/30 text-accent text-sm font-medium mb-6">
                 <FileText className="w-4 h-4" />
-                Producto principal
+                CV Builder con IA
               </div>
               
               <h1 className="headline-xl mb-6">
-                CV Builder con{" "}
-                <span className="text-gradient">Inteligencia Artificial</span>
+                Convierte tu CV en una herramienta de empleabilidad real.
               </h1>
               
               <p className="text-lg text-muted-foreground mb-8">
-                Analiza, optimiza y transforma tu currículum con IA. 
-                Recibe feedback instantáneo y recomendaciones personalizadas 
-                para destacar ante reclutadores y sistemas ATS.
+                Recibe análisis con IA, recomendaciones claras y oportunidades 
+                alineadas a tu perfil profesional.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="hero" size="xl">
+                <Button variant="lime" size="xl">
                   Analizar mi CV
                   <ArrowRight className="w-5 h-5" />
                 </Button>
@@ -96,10 +94,10 @@ export default function CVBuilder() {
 
             {/* Visual mockup */}
             <div className="relative">
-              <div className="card-elevated p-8">
+              <div className="bg-white rounded-2xl p-8 shadow-lg border border-lime/20">
                 <div className="space-y-6">
                   <div className="flex items-center gap-4 pb-4 border-b border-border">
-                    <div className="w-14 h-14 rounded-xl bg-accent/20 flex items-center justify-center">
+                    <div className="w-14 h-14 rounded-xl bg-lime/30 flex items-center justify-center">
                       <Upload className="w-7 h-7 text-accent" />
                     </div>
                     <div>
@@ -109,15 +107,15 @@ export default function CVBuilder() {
                   </div>
 
                   <div className="space-y-4">
-                    <div className="p-4 rounded-xl bg-secondary/50 flex items-center gap-3">
+                    <div className="p-4 rounded-xl bg-lime/10 flex items-center gap-3">
                       <CheckCircle2 className="w-5 h-5 text-accent" />
                       <span className="text-sm">Experiencia laboral optimizada</span>
                     </div>
-                    <div className="p-4 rounded-xl bg-secondary/50 flex items-center gap-3">
+                    <div className="p-4 rounded-xl bg-lime/10 flex items-center gap-3">
                       <CheckCircle2 className="w-5 h-5 text-accent" />
                       <span className="text-sm">Keywords para tu industria</span>
                     </div>
-                    <div className="p-4 rounded-xl bg-secondary/50 flex items-center gap-3">
+                    <div className="p-4 rounded-xl bg-lime/10 flex items-center gap-3">
                       <Sparkles className="w-5 h-5 text-accent animate-pulse" />
                       <span className="text-sm">Analizando habilidades...</span>
                     </div>
@@ -125,7 +123,7 @@ export default function CVBuilder() {
                 </div>
               </div>
               
-              <div className="absolute -bottom-4 -right-4 px-4 py-2 rounded-full bg-accent text-accent-foreground text-sm font-medium shadow-lg">
+              <div className="absolute -bottom-4 -right-4 px-4 py-2 rounded-full bg-lime text-lime-foreground text-sm font-semibold shadow-lg">
                 ✨ Análisis IA activo
               </div>
             </div>
@@ -134,7 +132,7 @@ export default function CVBuilder() {
       </section>
 
       {/* How it works */}
-      <section className="section-padding">
+      <section className="section-padding bg-white">
         <div className="container-levely">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="headline-lg">Cómo funciona el CV Builder</h2>
@@ -147,10 +145,10 @@ export default function CVBuilder() {
             {steps.map((item, index) => (
               <div key={item.step} className="relative">
                 {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-8 left-[60%] w-[80%] h-[2px] bg-border" />
+                  <div className="hidden lg:block absolute top-8 left-[60%] w-[80%] h-[2px] bg-lime/30" />
                 )}
-                <div className="card-elevated h-full">
-                  <span className="text-3xl font-extrabold text-accent/30 mb-4 block">
+                <div className="bg-[#F5F5F0] rounded-2xl p-6 h-full border border-lime/10 hover:border-lime/30 transition-colors">
+                  <span className="text-3xl font-extrabold text-lime mb-4 block">
                     {item.step}
                   </span>
                   <h3 className="text-lg font-bold mb-2">{item.title}</h3>
@@ -163,7 +161,7 @@ export default function CVBuilder() {
       </section>
 
       {/* Features */}
-      <section className="section-padding bg-secondary/30">
+      <section className="section-padding bg-[#F5F5F0]">
         <div className="container-levely">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="headline-lg">Características del análisis</h2>
@@ -176,9 +174,9 @@ export default function CVBuilder() {
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="flex gap-4 p-6 rounded-2xl border border-border bg-card hover:border-accent/30 transition-all duration-300"
+                className="flex gap-4 p-6 rounded-2xl border border-lime/20 bg-white hover:border-lime/40 transition-all duration-300"
               >
-                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-lime/20 flex items-center justify-center flex-shrink-0">
                   <feature.icon className="w-6 h-6 text-accent" />
                 </div>
                 <div>
@@ -192,10 +190,10 @@ export default function CVBuilder() {
       </section>
 
       {/* Trust */}
-      <section className="section-padding">
+      <section className="section-padding bg-white">
         <div className="container-levely">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-lime/20 mb-6">
               <Shield className="w-4 h-4 text-accent" />
               <span className="text-sm font-medium">Seguridad garantizada</span>
             </div>
@@ -206,7 +204,7 @@ export default function CVBuilder() {
               Utilizamos encriptación de nivel bancario para proteger tus datos. 
               Tu CV solo se procesa para el análisis y nunca se comparte con terceros.
             </p>
-            <Button variant="hero" size="lg">
+            <Button variant="lime" size="lg">
               Comenzar análisis gratuito
               <ArrowRight className="w-5 h-5" />
             </Button>
