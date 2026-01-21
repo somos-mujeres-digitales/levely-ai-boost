@@ -13,9 +13,9 @@ export function HeroSection() {
       <div className="container-levely relative">
         <div className="flex flex-col items-center text-center py-20 sm:py-28 lg:py-36">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary border border-border mb-8 animate-fade-up">
-            <Sparkles className="w-4 h-4 text-accent" />
-            <span className="text-sm font-medium text-muted-foreground">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue/10 border border-blue/20 mb-8 animate-fade-up">
+            <Sparkles className="w-4 h-4 text-blue" />
+            <span className="text-sm font-medium text-foreground">
               Potenciado por IA
             </span>
           </div>

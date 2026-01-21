@@ -79,15 +79,15 @@ export default function CareerAccelerator() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="section-padding bg-primary text-primary-foreground overflow-hidden relative">
+      <section className="section-padding bg-[#19282D] text-white overflow-hidden relative">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-40 -right-40 w-96 h-96 bg-accent/20 rounded-full blur-3xl" />
-          <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
+          <div className="absolute -top-40 -right-40 w-96 h-96 bg-coral/30 rounded-full blur-3xl" />
+          <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-coral/20 rounded-full blur-3xl" />
         </div>
 
         <div className="container-levely relative">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 text-primary-foreground text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-coral/20 text-coral text-sm font-medium mb-6">
               <Rocket className="w-4 h-4" />
               Programa Premium
             </div>
@@ -96,7 +96,7 @@ export default function CareerAccelerator() {
               Career Accelerator
             </h1>
             
-            <p className="text-xl text-primary-foreground/80 mb-8">
+            <p className="text-xl text-white/80 mb-8">
               Un programa intensivo de 4 semanas para acelerar tu crecimiento profesional 
               con mentores expertos, herramientas de IA y una metodología probada.
             </p>
@@ -104,7 +104,7 @@ export default function CareerAccelerator() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <Button 
                 size="xl"
-                className="bg-primary-foreground text-primary hover:bg-primary-foreground/90"
+                className="bg-coral text-white hover:bg-coral/90"
               >
                 Reservar plaza
                 <ArrowRight className="w-5 h-5" />
@@ -112,7 +112,7 @@ export default function CareerAccelerator() {
               <Button 
                 variant="outline" 
                 size="lg"
-                className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
+                className="border-white/30 text-white hover:bg-white/10"
               >
                 Ver programa completo
               </Button>
@@ -120,15 +120,15 @@ export default function CareerAccelerator() {
 
             <div className="flex flex-wrap justify-center gap-6">
               <div className="flex items-center gap-2">
-                <Calendar className="w-5 h-5 text-accent" />
+                <Calendar className="w-5 h-5 text-coral" />
                 <span>4 semanas</span>
               </div>
               <div className="flex items-center gap-2">
-                <Users className="w-5 h-5 text-accent" />
+                <Users className="w-5 h-5 text-coral" />
                 <span>Grupos reducidos</span>
               </div>
               <div className="flex items-center gap-2">
-                <Award className="w-5 h-5 text-accent" />
+                <Award className="w-5 h-5 text-coral" />
                 <span>Certificación</span>
               </div>
             </div>
@@ -137,7 +137,7 @@ export default function CareerAccelerator() {
       </section>
 
       {/* Program structure */}
-      <section className="section-padding">
+      <section className="section-padding bg-[#F5F5F0]">
         <div className="container-levely">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="headline-lg">Estructura del programa</h2>
@@ -150,16 +150,16 @@ export default function CareerAccelerator() {
             {programWeeks.map((week) => (
               <div
                 key={week.week}
-                className="card-elevated hover:-translate-y-1 transition-all duration-300"
+                className="bg-white p-6 sm:p-8 rounded-2xl border border-coral/10 hover:border-coral/30 hover:-translate-y-1 transition-all duration-300"
               >
-                <span className="text-sm font-bold text-accent mb-2 block">
+                <span className="text-sm font-bold text-coral mb-2 block">
                   {week.week}
                 </span>
                 <h3 className="text-xl font-bold mb-4">{week.title}</h3>
                 <ul className="space-y-3">
                   {week.items.map((item) => (
                     <li key={item} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-5 h-5 text-coral mt-0.5 flex-shrink-0" />
                       <span className="text-muted-foreground">{item}</span>
                     </li>
                   ))}
@@ -171,7 +171,7 @@ export default function CareerAccelerator() {
       </section>
 
       {/* Benefits */}
-      <section className="section-padding bg-secondary/30">
+      <section className="section-padding bg-white">
         <div className="container-levely">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="headline-lg">¿Qué incluye?</h2>
@@ -184,10 +184,10 @@ export default function CareerAccelerator() {
             {benefits.map((benefit) => (
               <div
                 key={benefit.title}
-                className="text-center p-6 rounded-2xl border border-border bg-card"
+                className="text-center p-6 rounded-2xl border border-coral/10 bg-[#F5F5F0] hover:border-coral/30 transition-colors"
               >
-                <div className="w-14 h-14 mx-auto rounded-xl bg-accent/10 flex items-center justify-center mb-4">
-                  <benefit.icon className="w-7 h-7 text-accent" />
+                <div className="w-14 h-14 mx-auto rounded-xl bg-coral/10 flex items-center justify-center mb-4">
+                  <benefit.icon className="w-7 h-7 text-coral" />
                 </div>
                 <h3 className="font-bold mb-2">{benefit.title}</h3>
                 <p className="text-sm text-muted-foreground">{benefit.description}</p>
@@ -198,12 +198,12 @@ export default function CareerAccelerator() {
       </section>
 
       {/* CTA */}
-      <section className="section-padding">
+      <section className="section-padding bg-[#F5F5F0]">
         <div className="container-levely">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary mb-6">
-              <Target className="w-4 h-4 text-accent" />
-              <span className="text-sm font-medium">Próxima cohorte</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-coral/10 mb-6">
+              <Target className="w-4 h-4 text-coral" />
+              <span className="text-sm font-medium text-coral">Próxima cohorte</span>
             </div>
             <h2 className="headline-lg mb-6">
               ¿Listo para acelerar tu carrera?
@@ -212,7 +212,7 @@ export default function CareerAccelerator() {
               Las plazas son limitadas. Reserva tu lugar en la próxima cohorte 
               y comienza tu transformación profesional.
             </p>
-            <Button variant="hero" size="xl">
+            <Button size="xl" className="bg-coral text-white hover:bg-coral/90">
               Reservar mi plaza
               <ArrowRight className="w-5 h-5" />
             </Button>
