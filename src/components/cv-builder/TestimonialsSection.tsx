@@ -1,0 +1,68 @@
+import { Star, Quote } from "lucide-react";
+
+const testimonials = [
+  {
+    name: "María García",
+    role: "Analista de Marketing",
+    company: "Startup Tech",
+    content: "Gracias a Levely pude optimizar mi CV y conseguí 3 entrevistas en la primera semana. Las recomendaciones de IA fueron muy precisas.",
+    rating: 5,
+  },
+  {
+    name: "Carlos Mendoza",
+    role: "Desarrollador Junior",
+    company: "Agencia Digital",
+    content: "El análisis de keywords me ayudó a pasar los filtros ATS que antes me rechazaban. Ahora trabajo en mi empresa soñada.",
+    rating: 5,
+  },
+  {
+    name: "Lucía Torres",
+    role: "Practicante de RRHH",
+    company: "Multinacional",
+    content: "Como recién egresada no sabía cómo destacar. Levely me dio feedback claro y actionable. ¡100% recomendado!",
+    rating: 5,
+  },
+];
+
+export function TestimonialsSection() {
+  return (
+    <section className="section-padding bg-white">
+      <div className="container-levely">
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <h2 className="headline-lg">Lo que dicen nuestros usuarios</h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            Miles de profesionales ya optimizaron su perfil con Levely
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {testimonials.map((testimonial) => (
+            <div
+              key={testimonial.name}
+              className="relative p-6 rounded-2xl border border-lime/20 bg-[#F5F5F0] hover:border-lime/40 transition-all duration-300"
+            >
+              <Quote className="w-8 h-8 text-lime/40 mb-4" />
+              
+              <div className="flex gap-1 mb-4">
+                {Array.from({ length: testimonial.rating }).map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-lime text-lime" />
+                ))}
+              </div>
+
+              <p className="text-foreground mb-6 text-sm leading-relaxed">
+                "{testimonial.content}"
+              </p>
+
+              <div className="pt-4 border-t border-lime/10">
+                <p className="font-semibold text-sm">{testimonial.name}</p>
+                <p className="text-xs text-muted-foreground">
+                  {testimonial.role} · {testimonial.company}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

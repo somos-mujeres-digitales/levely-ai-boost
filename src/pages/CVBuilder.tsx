@@ -1,5 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
+import { TestimonialsSection } from "@/components/cv-builder/TestimonialsSection";
+import { CVBuilderPricing } from "@/components/cv-builder/PricingSection";
 import { 
   FileText, 
   CheckCircle2, 
@@ -211,6 +213,12 @@ export default function CVBuilder() {
           </div>
         </div>
       </section>
+
+      {/* Testimonials */}
+      <TestimonialsSection />
+
+      {/* Pricing */}
+      <CVBuilderPricing />
     </Layout>
   );
 }

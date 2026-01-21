@@ -8,7 +8,7 @@ export function CTASection() {
         <div className="relative overflow-hidden rounded-3xl gradient-hero border border-border p-8 sm:p-12 lg:p-16 text-center">
           {/* Background decoration */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-blue/10 rounded-full blur-3xl" />
           </div>
 
           <div className="relative max-w-2xl mx-auto">

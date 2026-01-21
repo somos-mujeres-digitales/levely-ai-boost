@@ -37,8 +37,8 @@ export function TargetAudience() {
               key={audience.title}
               className="text-center group"
             >
-              <div className="w-20 h-20 mx-auto rounded-2xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
-                <audience.icon className="w-10 h-10 text-accent" />
+              <div className="w-20 h-20 mx-auto rounded-2xl bg-blue/10 flex items-center justify-center mb-6 group-hover:bg-blue/20 transition-colors">
+                <audience.icon className="w-10 h-10 text-blue" />
               </div>
               <h3 className="text-xl font-bold mb-3">{audience.title}</h3>
               <p className="text-muted-foreground">{audience.description}</p>
