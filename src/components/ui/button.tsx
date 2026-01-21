@@ -15,8 +15,9 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "text-foreground hover:bg-secondary hover:text-secondary-foreground",
         link: "text-foreground underline-offset-4 hover:underline",
-        accent: "bg-accent text-accent-foreground shadow-[0_4px_14px_-3px_hsl(250_91%_66%_/_0.4)] hover:-translate-y-0.5 hover:shadow-[0_6px_20px_-3px_hsl(250_91%_66%_/_0.5)]",
-        hero: "bg-gradient-to-r from-accent to-[hsl(280_80%_60%)] text-accent-foreground shadow-[0_4px_14px_-3px_hsl(250_91%_66%_/_0.4)] hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-3px_hsl(250_91%_66%_/_0.5)]",
+        accent: "bg-accent text-accent-foreground shadow-[0_4px_14px_-3px_hsl(192_27%_14%_/_0.3)] hover:-translate-y-0.5 hover:shadow-[0_6px_20px_-3px_hsl(192_27%_14%_/_0.4)]",
+        hero: "bg-accent text-accent-foreground shadow-[0_4px_14px_-3px_hsl(192_27%_14%_/_0.3)] hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-3px_hsl(192_27%_14%_/_0.4)]",
+        lime: "bg-lime text-lime-foreground shadow-[0_4px_14px_-3px_hsl(83_100%_74%_/_0.5)] hover:-translate-y-0.5 hover:shadow-[0_6px_20px_-3px_hsl(83_100%_74%_/_0.6)]",
       },
       size: {
         default: "h-11 px-6 py-2",
