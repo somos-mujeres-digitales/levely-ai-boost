@@ -75,7 +75,7 @@ export default function CVBuilder() {
               </div>
               
               <h1 className="headline-xl mb-6">
-                Convierte tu CV en una herramienta de empleabilidad real.
+                Optimiza tu perfil para el mercado global
               </h1>
               
               <p className="text-lg text-muted-foreground mb-8">
