@@ -34,7 +34,7 @@ export function HowItWorks() {
             <defs>
               <linearGradient id="lineGradient" x1="0%" y1="0%" x2="0%" y2="100%">
                 <stop offset="0%" stopColor="hsl(222, 91%, 67%)" />
-                <stop offset="50%" stopColor="hsl(192, 27%, 14%)" />
+                <stop offset="50%" stopColor="hsl(83, 100%, 74%)" />
                 <stop offset="100%" stopColor="hsl(222, 91%, 67%)" />
               </linearGradient>
             </defs>
@@ -54,28 +54,28 @@ export function HowItWorks() {
               {/* Floating Card - CV Upload UI */}
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue/20 to-transparent rounded-3xl blur-2xl" />
-                <div className="relative bg-white rounded-2xl shadow-lg border border-border/50 p-6 max-w-sm mx-auto lg:ml-0">
+                <div className="relative bg-card rounded-2xl shadow-lg border border-border p-6 max-w-sm mx-auto lg:ml-0">
                   {/* Mini CV Upload Interface */}
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-10 h-10 rounded-xl bg-blue/10 flex items-center justify-center">
                       <Upload className="w-5 h-5 text-blue" />
                     </div>
                     <div>
-                      <p className="font-semibold text-sm">Subir CV</p>
+                      <p className="font-semibold text-sm text-card-foreground">Subir CV</p>
                       <p className="text-xs text-muted-foreground">PDF, DOCX</p>
                     </div>
                   </div>
                   
-                  <div className="border-2 border-dashed border-border rounded-xl p-6 text-center bg-secondary/30">
+                  <div className="border-2 border-dashed border-border rounded-xl p-6 text-center bg-secondary/50">
                     <div className="w-12 h-12 rounded-full bg-blue/10 flex items-center justify-center mx-auto mb-3">
                       <Upload className="w-6 h-6 text-blue" />
                     </div>
-                    <p className="text-sm font-medium">Arrastra tu archivo aquí</p>
+                    <p className="text-sm font-medium text-card-foreground">Arrastra tu archivo aquí</p>
                     <p className="text-xs text-muted-foreground mt-1">o haz click para seleccionar</p>
                   </div>
                   
                   <div className="mt-4 flex gap-2">
-                    <div className="flex-1 h-2 rounded-full bg-blue/20" />
+                    <div className="flex-1 h-2 rounded-full bg-blue/30" />
                     <div className="flex-1 h-2 rounded-full bg-border" />
                     <div className="flex-1 h-2 rounded-full bg-border" />
                   </div>
@@ -90,39 +90,39 @@ export function HowItWorks() {
               {/* Floating Card - Recommendations UI */}
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-bl from-blue/20 to-transparent rounded-3xl blur-2xl" />
-                <div className="relative bg-white rounded-2xl shadow-lg border border-border/50 p-6 max-w-sm mx-auto lg:mr-0 lg:ml-auto">
+                <div className="relative bg-card rounded-2xl shadow-lg border border-border p-6 max-w-sm mx-auto lg:mr-0 lg:ml-auto">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-10 h-10 rounded-xl bg-blue/10 flex items-center justify-center">
                       <Sparkles className="w-5 h-5 text-blue" />
                     </div>
                     <div>
-                      <p className="font-semibold text-sm">Oportunidades para ti</p>
+                      <p className="font-semibold text-sm text-card-foreground">Oportunidades para ti</p>
                       <p className="text-xs text-muted-foreground">Basadas en tu perfil</p>
                     </div>
                   </div>
                   
                   {/* Opportunity Cards */}
                   <div className="space-y-3">
-                    <div className="p-3 rounded-xl bg-secondary/50 border border-border/50">
+                    <div className="p-3 rounded-xl bg-secondary/70 border border-border">
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-sm font-medium">Practicante Marketing</span>
-                        <span className="text-[10px] font-bold text-white bg-blue px-2 py-0.5 rounded-full">Perfect Match</span>
+                        <span className="text-sm font-medium text-card-foreground">Practicante Marketing</span>
+                        <span className="text-[10px] font-bold text-blue-foreground bg-blue px-2 py-0.5 rounded-full">Perfect Match</span>
                       </div>
                       <p className="text-xs text-muted-foreground">Empresa Tech • Lima</p>
                     </div>
                     
-                    <div className="p-3 rounded-xl bg-secondary/50 border border-border/50">
+                    <div className="p-3 rounded-xl bg-secondary/70 border border-border">
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-sm font-medium">Beca Santander</span>
-                        <span className="text-[10px] font-bold text-accent-foreground bg-accent px-2 py-0.5 rounded-full">Recommended</span>
+                        <span className="text-sm font-medium text-card-foreground">Beca Santander</span>
+                        <span className="text-[10px] font-bold text-lime-foreground bg-lime px-2 py-0.5 rounded-full">Recommended</span>
                       </div>
                       <p className="text-xs text-muted-foreground">100% cubierto • España</p>
                     </div>
                     
-                    <div className="p-3 rounded-xl bg-secondary/50 border border-border/50">
+                    <div className="p-3 rounded-xl bg-secondary/70 border border-border">
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-sm font-medium">Jr. Data Analyst</span>
-                        <span className="text-[10px] font-bold text-lime-foreground bg-lime px-2 py-0.5 rounded-full">High Potential</span>
+                        <span className="text-sm font-medium text-card-foreground">Jr. Data Analyst</span>
+                        <span className="text-[10px] font-bold text-coral-foreground bg-coral px-2 py-0.5 rounded-full">High Potential</span>
                       </div>
                       <p className="text-xs text-muted-foreground">Startup FinTech • Remoto</p>
                     </div>
@@ -154,19 +154,19 @@ export function HowItWorks() {
               {/* Floating Card - Interview & Feedback UI */}
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue/20 to-transparent rounded-3xl blur-2xl" />
-                <div className="relative bg-white rounded-2xl shadow-lg border border-border/50 p-6 max-w-sm mx-auto lg:ml-0">
+                <div className="relative bg-card rounded-2xl shadow-lg border border-border p-6 max-w-sm mx-auto lg:ml-0">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-10 h-10 rounded-xl bg-blue/10 flex items-center justify-center">
                       <Rocket className="w-5 h-5 text-blue" />
                     </div>
                     <div>
-                      <p className="font-semibold text-sm">Preparación</p>
+                      <p className="font-semibold text-sm text-card-foreground">Preparación</p>
                       <p className="text-xs text-muted-foreground">Entrevistas y mentorías</p>
                     </div>
                   </div>
                   
                   {/* Interview Simulator Mini */}
-                  <div className="p-4 rounded-xl bg-accent text-accent-foreground mb-3">
+                  <div className="p-4 rounded-xl bg-blue text-blue-foreground mb-3">
                     <div className="flex items-center gap-3 mb-3">
                       <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
                         <span className="text-xs">🤖</span>
@@ -184,15 +184,15 @@ export function HowItWorks() {
                   </div>
                   
                   {/* Mentor Feedback Card */}
-                  <div className="p-3 rounded-xl bg-secondary/50 border border-border/50">
+                  <div className="p-3 rounded-xl bg-secondary/70 border border-border">
                     <div className="flex items-center gap-2 mb-2">
                       <div className="w-6 h-6 rounded-full bg-blue/20 flex items-center justify-center text-xs">👤</div>
-                      <span className="text-xs font-medium">Feedback de Mentor</span>
+                      <span className="text-xs font-medium text-card-foreground">Feedback de Mentor</span>
                     </div>
                     <p className="text-xs text-muted-foreground">"Excelente estructura en tu respuesta. Mejora ejemplos concretos."</p>
                     <div className="flex gap-1 mt-2">
                       {[1,2,3,4,5].map(i => (
-                        <span key={i} className={`text-xs ${i <= 4 ? 'text-yellow-500' : 'text-border'}`}>★</span>
+                        <span key={i} className={`text-xs ${i <= 4 ? 'text-yellow-400' : 'text-muted'}`}>★</span>
                       ))}
                     </div>
                   </div>
