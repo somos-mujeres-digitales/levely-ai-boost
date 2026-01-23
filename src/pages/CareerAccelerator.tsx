@@ -101,7 +101,7 @@ export default function CareerAccelerator() {
               con mentores expertos, herramientas de IA y una metodología probada.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
               <Button 
                 size="xl"
                 className="bg-coral text-white hover:bg-coral/90"
@@ -109,13 +109,10 @@ export default function CareerAccelerator() {
                 Reservar plaza
                 <ArrowRight className="w-5 h-5" />
               </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="border-white/30 text-white hover:bg-white/10"
-              >
-                Ver programa completo
-              </Button>
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white/90">
+                <Calendar className="w-4 h-4" />
+                <span className="text-sm font-medium">Inicio: 15 de Febrero 2025</span>
+              </div>
             </div>
 
             <div className="flex flex-wrap justify-center gap-6">
@@ -137,7 +134,7 @@ export default function CareerAccelerator() {
       </section>
 
       {/* Program structure */}
-      <section className="section-padding bg-[#F5F5F0]">
+      <section className="section-padding bg-secondary dark:bg-[#19282D]">
         <div className="container-levely">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="headline-lg">Estructura del programa</h2>
@@ -150,7 +147,7 @@ export default function CareerAccelerator() {
             {programWeeks.map((week) => (
               <div
                 key={week.week}
-                className="bg-white p-6 sm:p-8 rounded-2xl border border-coral/10 hover:border-coral/30 hover:-translate-y-1 transition-all duration-300"
+                className="bg-card p-6 sm:p-8 rounded-2xl border border-coral/10 hover:border-coral/30 hover:-translate-y-1 transition-all duration-300"
               >
                 <span className="text-sm font-bold text-coral mb-2 block">
                   {week.week}
@@ -171,7 +168,7 @@ export default function CareerAccelerator() {
       </section>
 
       {/* Benefits */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-background">
         <div className="container-levely">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="headline-lg">¿Qué incluye?</h2>
@@ -181,16 +178,26 @@ export default function CareerAccelerator() {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {benefits.map((benefit) => (
+            {benefits.map((benefit, index) => (
               <div
                 key={benefit.title}
-                className="text-center p-6 rounded-2xl border border-coral/10 bg-[#F5F5F0] hover:border-coral/30 transition-colors"
+                className="group relative p-6 rounded-2xl bg-card border border-border/50 hover:border-coral/50 transition-all duration-300 hover:-translate-y-2 overflow-hidden"
               >
-                <div className="w-14 h-14 mx-auto rounded-xl bg-coral/10 flex items-center justify-center mb-4">
-                  <benefit.icon className="w-7 h-7 text-coral" />
+                {/* Gradient overlay on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-coral/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                
+                {/* Floating number */}
+                <span className="absolute top-4 right-4 text-6xl font-bold text-coral/10 group-hover:text-coral/20 transition-colors">
+                  0{index + 1}
+                </span>
+                
+                <div className="relative">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-coral to-coral/80 flex items-center justify-center mb-5 shadow-lg shadow-coral/20 group-hover:scale-110 transition-transform duration-300">
+                    <benefit.icon className="w-7 h-7 text-white" />
+                  </div>
+                  <h3 className="font-bold text-lg mb-2">{benefit.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{benefit.description}</p>
                 </div>
-                <h3 className="font-bold mb-2">{benefit.title}</h3>
-                <p className="text-sm text-muted-foreground">{benefit.description}</p>
               </div>
             ))}
           </div>
@@ -198,7 +205,7 @@ export default function CareerAccelerator() {
       </section>
 
       {/* CTA */}
-      <section className="section-padding bg-[#F5F5F0]">
+      <section className="section-padding bg-secondary dark:bg-[#19282D]">
         <div className="container-levely">
           <div className="max-w-3xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-coral/10 mb-6">
