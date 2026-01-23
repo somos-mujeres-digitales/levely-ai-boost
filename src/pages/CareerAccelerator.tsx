@@ -5,13 +5,11 @@ import {
   ArrowRight,
   Calendar,
   Users,
-  Zap,
-  CheckCircle2,
   Award,
-  Target,
-  BookOpen,
-  MessageCircle
+  CheckCircle2
 } from "lucide-react";
+import { PricingSection } from "@/components/career-accelerator/PricingSection";
+import { ExpertsSection } from "@/components/career-accelerator/ExpertsSection";
 
 const programWeeks = [
   {
@@ -49,29 +47,6 @@ const programWeeks = [
       "Seguimiento y negociación",
       "Plan de desarrollo continuo",
     ],
-  },
-];
-
-const benefits = [
-  {
-    icon: Users,
-    title: "Mentoría 1:1",
-    description: "Sesiones individuales con mentores expertos en tu área.",
-  },
-  {
-    icon: Zap,
-    title: "Herramientas IA",
-    description: "Acceso completo a todas las herramientas de optimización.",
-  },
-  {
-    icon: BookOpen,
-    title: "Material exclusivo",
-    description: "Guías, templates y recursos diseñados por expertos.",
-  },
-  {
-    icon: MessageCircle,
-    title: "Comunidad",
-    description: "Acceso a una red de profesionales en crecimiento.",
   },
 ];
 
@@ -167,65 +142,11 @@ export default function CareerAccelerator() {
         </div>
       </section>
 
-      {/* Benefits */}
-      <section className="section-padding bg-background">
-        <div className="container-levely">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="headline-lg">¿Qué incluye?</h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Todo lo que necesitas para acelerar tu carrera
-            </p>
-          </div>
+      {/* Pricing */}
+      <PricingSection />
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {benefits.map((benefit, index) => (
-              <div
-                key={benefit.title}
-                className="group relative p-6 rounded-2xl bg-card border border-border/50 hover:border-coral/50 transition-all duration-300 hover:-translate-y-2 overflow-hidden"
-              >
-                {/* Gradient overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-coral/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                
-                {/* Floating number */}
-                <span className="absolute top-4 right-4 text-6xl font-bold text-coral/10 group-hover:text-coral/20 transition-colors">
-                  0{index + 1}
-                </span>
-                
-                <div className="relative">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-coral to-coral/80 flex items-center justify-center mb-5 shadow-lg shadow-coral/20 group-hover:scale-110 transition-transform duration-300">
-                    <benefit.icon className="w-7 h-7 text-white" />
-                  </div>
-                  <h3 className="font-bold text-lg mb-2">{benefit.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{benefit.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="section-padding bg-secondary dark:bg-[#19282D]">
-        <div className="container-levely">
-          <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-coral/10 mb-6">
-              <Target className="w-4 h-4 text-coral" />
-              <span className="text-sm font-medium text-coral">Próxima cohorte</span>
-            </div>
-            <h2 className="headline-lg mb-6">
-              ¿Listo para acelerar tu carrera?
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Las plazas son limitadas. Reserva tu lugar en la próxima cohorte 
-              y comienza tu transformación profesional.
-            </p>
-            <Button size="xl" className="bg-coral text-white hover:bg-coral/90">
-              Reservar mi plaza
-              <ArrowRight className="w-5 h-5" />
-            </Button>
-          </div>
-        </div>
-      </section>
+      {/* Experts Network */}
+      <ExpertsSection />
     </Layout>
   );
 }
