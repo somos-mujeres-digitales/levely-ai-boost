@@ -20,8 +20,8 @@ export function LogosSection() {
               key={partner.name}
               className="group flex items-center justify-center"
             >
-              <div className="w-20 h-20 rounded-2xl bg-white border border-border flex items-center justify-center group-hover:border-accent/30 transition-colors">
-                <span className="text-lg font-bold text-muted-foreground group-hover:text-accent transition-colors">
+              <div className="w-20 h-20 rounded-2xl bg-card border border-border flex items-center justify-center group-hover:border-blue/30 transition-colors">
+                <span className="text-lg font-bold text-muted-foreground group-hover:text-blue transition-colors">
                   {partner.initials}
                 </span>
               </div>
