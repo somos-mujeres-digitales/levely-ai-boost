@@ -1,44 +1,15 @@
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { TestimonialsSection } from "@/components/cv-builder/TestimonialsSection";
-import { CVBuilderPricing } from "@/components/cv-builder/PricingSection";
 import { HowItWorksSection } from "@/components/cv-builder/HowItWorksSection";
 import { HotSaleSection } from "@/components/cv-builder/HotSaleSection";
+import { VideoDemoSection } from "@/components/cv-builder/VideoDemoSection";
+import { FAQSection } from "@/components/cv-builder/FAQSection";
+import cvBuilderHeroMockup from "@/assets/cv-builder-hero-mockup.png";
 import {
-  FileText, 
-  CheckCircle2, 
-  Sparkles, 
+  FileText,
   ArrowRight,
-  Upload,
-  BarChart3,
-  Target,
-  Lightbulb,
-  Shield,
-  Zap
 } from "lucide-react";
-
-const features = [
-  {
-    icon: BarChart3,
-    title: "Análisis completo",
-    description: "Evaluamos cada sección de tu CV con IA avanzada para identificar fortalezas y áreas de mejora.",
-  },
-  {
-    icon: Lightbulb,
-    title: "Sugerencias inteligentes",
-    description: "Recibe recomendaciones específicas para mejorar tu redacción, formato y keywords.",
-  },
-  {
-    icon: Target,
-    title: "Optimización ATS",
-    description: "Asegura que tu CV pase los filtros automáticos que usan las empresas.",
-  },
-  {
-    icon: Zap,
-    title: "Resultados instantáneos",
-    description: "Obtén tu análisis completo en menos de 60 segundos.",
-  },
-];
 
 export default function CVBuilder() {
   return (
@@ -73,35 +44,16 @@ export default function CVBuilder() {
               </div>
             </div>
 
-            {/* Visual mockup */}
+            {/* Visual mockup - New innovative image */}
             <div className="relative">
-              <div className="bg-card rounded-2xl p-8 shadow-lg border border-lime/20">
-                <div className="space-y-6">
-                  <div className="flex items-center gap-4 pb-4 border-b border-border">
-                    <div className="w-14 h-14 rounded-xl bg-lime/30 flex items-center justify-center">
-                      <Upload className="w-7 h-7 text-lime-foreground" />
-                    </div>
-                    <div>
-                      <p className="font-semibold text-lg text-card-foreground">Sube tu CV</p>
-                      <p className="text-sm text-muted-foreground">PDF, Word o texto</p>
-                    </div>
-                  </div>
-
-                  <div className="space-y-4">
-                    <div className="p-4 rounded-xl bg-lime/10 flex items-center gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-lime-foreground" />
-                      <span className="text-sm text-card-foreground">Experiencia laboral optimizada</span>
-                    </div>
-                    <div className="p-4 rounded-xl bg-lime/10 flex items-center gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-lime-foreground" />
-                      <span className="text-sm text-card-foreground">Keywords para tu industria</span>
-                    </div>
-                    <div className="p-4 rounded-xl bg-lime/10 flex items-center gap-3">
-                      <Sparkles className="w-5 h-5 text-lime-foreground animate-pulse" />
-                      <span className="text-sm text-card-foreground">Analizando habilidades...</span>
-                    </div>
-                  </div>
-                </div>
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <img 
+                  src={cvBuilderHeroMockup} 
+                  alt="CV Builder AI Analysis Dashboard" 
+                  className="w-full h-auto"
+                />
+                {/* Glow effect */}
+                <div className="absolute inset-0 bg-gradient-to-t from-lime/20 via-transparent to-transparent pointer-events-none" />
               </div>
               
               <div className="absolute -bottom-4 -right-4 px-4 py-2 rounded-full bg-lime text-lime-foreground text-sm font-semibold shadow-lg">
@@ -115,66 +67,17 @@ export default function CVBuilder() {
       {/* Hot Sale Section */}
       <HotSaleSection />
 
-      {/* How it works - New Visual Section */}
+      {/* Video Demo Section */}
+      <VideoDemoSection />
+
+      {/* How it works */}
       <HowItWorksSection />
-
-      {/* Features */}
-      <section className="section-padding bg-secondary/30 dark:bg-secondary/10">
-        <div className="container-levely">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="headline-lg">Características del análisis</h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Todo lo que necesitas para crear un CV que destaque
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {features.map((feature) => (
-              <div
-                key={feature.title}
-                className="flex gap-4 p-6 rounded-2xl border border-border bg-card hover:border-lime/40 transition-all duration-300 hover:shadow-lg"
-              >
-                <div className="w-12 h-12 rounded-xl bg-lime/20 flex items-center justify-center flex-shrink-0">
-                  <feature.icon className="w-6 h-6 text-lime-foreground" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-card-foreground mb-1">{feature.title}</h3>
-                  <p className="text-muted-foreground text-sm">{feature.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Trust */}
-      <section className="section-padding bg-background">
-        <div className="container-levely">
-          <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-lime/20 mb-6">
-              <Shield className="w-4 h-4 text-lime-foreground" />
-              <span className="text-sm font-medium text-card-foreground">Seguridad garantizada</span>
-            </div>
-            <h2 className="headline-md mb-6">
-              Tu información está protegida
-            </h2>
-            <p className="text-muted-foreground mb-8">
-              Utilizamos encriptación de nivel bancario para proteger tus datos. 
-              Tu CV solo se procesa para el análisis y nunca se comparte con terceros.
-            </p>
-            <Button variant="lime" size="lg">
-              Comenzar análisis gratuito
-              <ArrowRight className="w-5 h-5" />
-            </Button>
-          </div>
-        </div>
-      </section>
 
       {/* Testimonials */}
       <TestimonialsSection />
 
-      {/* Pricing */}
-      <CVBuilderPricing />
+      {/* FAQ */}
+      <FAQSection />
     </Layout>
   );
 }
