@@ -3,7 +3,8 @@ import { Button } from "@/components/ui/button";
 import { TestimonialsSection } from "@/components/cv-builder/TestimonialsSection";
 import { CVBuilderPricing } from "@/components/cv-builder/PricingSection";
 import { HowItWorksSection } from "@/components/cv-builder/HowItWorksSection";
-import { 
+import { HotSaleSection } from "@/components/cv-builder/HotSaleSection";
+import {
   FileText, 
   CheckCircle2, 
   Sparkles, 
@@ -110,6 +111,9 @@ export default function CVBuilder() {
           </div>
         </div>
       </section>
+
+      {/* Hot Sale Section */}
+      <HotSaleSection />
 
       {/* How it works - New Visual Section */}
       <HowItWorksSection />

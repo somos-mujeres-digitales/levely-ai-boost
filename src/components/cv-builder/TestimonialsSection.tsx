@@ -26,7 +26,7 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding bg-secondary/30 dark:bg-secondary/10">
       <div className="container-levely">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="headline-lg">Lo que dicen nuestros usuarios</h2>
@@ -39,7 +39,7 @@ export function TestimonialsSection() {
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.name}
-              className="relative p-6 rounded-2xl border border-lime/20 bg-[#F5F5F0] hover:border-lime/40 transition-all duration-300"
+              className="relative p-6 rounded-2xl border border-border bg-card hover:border-lime/40 transition-all duration-300"
             >
               <Quote className="w-8 h-8 text-lime/40 mb-4" />
               
@@ -53,7 +53,7 @@ export function TestimonialsSection() {
                 "{testimonial.content}"
               </p>
 
-              <div className="pt-4 border-t border-lime/10">
+              <div className="pt-4 border-t border-border">
                 <p className="font-semibold text-sm">{testimonial.name}</p>
                 <p className="text-xs text-muted-foreground">
                   {testimonial.role} · {testimonial.company}
