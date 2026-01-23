@@ -53,7 +53,10 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-12 pt-8 border-t border-primary-foreground/10">
+        <div className="mt-12 pt-8 border-t border-primary-foreground/10 space-y-4">
+          <p className="text-sm text-primary-foreground/70 text-center font-medium">
+            Respaldado por Proinnóvate del Ministerio de la Producción
+          </p>
           <p className="text-sm text-primary-foreground/50 text-center">
             © {new Date().getFullYear()} Levely. Todos los derechos reservados.
           </p>
