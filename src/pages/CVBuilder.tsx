@@ -5,7 +5,7 @@ import { HowItWorksSection } from "@/components/cv-builder/HowItWorksSection";
 import { HotSaleSection } from "@/components/cv-builder/HotSaleSection";
 import { VideoDemoSection } from "@/components/cv-builder/VideoDemoSection";
 import { FAQSection } from "@/components/cv-builder/FAQSection";
-import cvBuilderHeroMockup from "@/assets/cv-builder-hero-dashboard.png";
+import { HeroCards } from "@/components/cv-builder/HeroCards";
 import {
   FileText,
   ArrowRight,
@@ -15,9 +15,9 @@ export default function CVBuilder() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="section-padding bg-secondary/30 dark:bg-background">
+      <section className="section-padding bg-gradient-to-br from-secondary/50 via-background to-purple-50/30 dark:from-background dark:via-slate-900 dark:to-slate-800">
         <div className="container-levely">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-lime/30 text-lime-foreground text-sm font-medium mb-6">
                 <FileText className="w-4 h-4" />
@@ -28,7 +28,7 @@ export default function CVBuilder() {
                 Optimiza tu perfil para el mercado global
               </h1>
               
-              <p className="text-lg text-muted-foreground mb-8">
+              <p className="text-lg text-muted-foreground mb-8 max-w-lg">
                 Recibe análisis con IA, recomendaciones claras y oportunidades 
                 alineadas a tu perfil profesional.
               </p>
@@ -44,21 +44,9 @@ export default function CVBuilder() {
               </div>
             </div>
 
-            {/* Visual mockup - New innovative image */}
-            <div className="relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img 
-                  src={cvBuilderHeroMockup} 
-                  alt="CV Builder AI Analysis Dashboard" 
-                  className="w-full h-auto"
-                />
-                {/* Glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-t from-lime/20 via-transparent to-transparent pointer-events-none" />
-              </div>
-              
-              <div className="absolute -bottom-4 -right-4 px-4 py-2 rounded-full bg-lime text-lime-foreground text-sm font-semibold shadow-lg">
-                ✨ Análisis IA activo
-              </div>
+            {/* Interactive Hero Cards */}
+            <div className="relative lg:pl-8">
+              <HeroCards />
             </div>
           </div>
         </div>
