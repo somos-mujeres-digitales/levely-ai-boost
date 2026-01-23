@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, FileText, CheckCircle2, Sparkles } from "lucide-react";
+import { ArrowRight, FileText, CheckCircle2, Sparkles, TrendingUp, Target } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const features = [
@@ -11,89 +11,122 @@ const features = [
 
 export function CVBuilderPreview() {
   return (
-    <section className="section-padding bg-secondary/30">
+    <section className="section-padding bg-background">
       <div className="container-levely">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Content */}
-          <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-medium mb-6">
-              <FileText className="w-4 h-4" />
-              Producto principal
-            </div>
-            
-            <h2 className="headline-lg mb-6">
-              CV Builder con IA
-            </h2>
-            
-            <p className="text-lg text-muted-foreground mb-8">
-              Analiza y optimiza tu currículum con inteligencia artificial. 
-              Recibe feedback instantáneo y recomendaciones personalizadas 
-              para destacar ante reclutadores.
-            </p>
-
-            <ul className="space-y-4 mb-8">
-              {features.map((feature) => (
-                <li key={feature} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
-
-            <Link to="/cv-builder">
-              <Button variant="accent" size="lg">
-                Probar CV Builder
-                <ArrowRight className="w-4 h-4" />
-              </Button>
-            </Link>
+        {/* Card wrapper similar to Career Accelerator */}
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue via-blue/90 to-blue/80 p-8 sm:p-12 lg:p-16">
+          {/* Background decoration */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute -top-20 -right-20 w-72 h-72 bg-lime/30 rounded-full blur-3xl" />
+            <div className="absolute -bottom-20 -left-20 w-72 h-72 bg-white/10 rounded-full blur-3xl" />
           </div>
 
-          {/* Visual */}
-          <div className="relative">
-            <div className="card-elevated p-8 lg:p-10">
-              {/* Mock CV analysis UI */}
-              <div className="space-y-6">
-                <div className="flex items-center justify-between pb-4 border-b border-border">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center">
-                      <FileText className="w-5 h-5 text-accent" />
+          <div className="relative grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Content */}
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/20 text-white text-sm font-medium mb-6">
+                <FileText className="w-4 h-4" />
+                Producto principal
+              </div>
+              
+              <h2 className="headline-lg text-white mb-6">
+                CV Builder con IA
+              </h2>
+              
+              <p className="text-lg text-white/80 mb-8">
+                Analiza y optimiza tu currículum con inteligencia artificial. 
+                Recibe feedback instantáneo y recomendaciones personalizadas 
+                para destacar ante reclutadores.
+              </p>
+
+              <ul className="space-y-4 mb-8">
+                {features.map((feature) => (
+                  <li key={feature} className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-lime mt-0.5 flex-shrink-0" />
+                    <span className="text-white/90">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <Link to="/cv-builder">
+                <Button 
+                  size="lg"
+                  className="bg-lime text-lime-foreground hover:bg-lime/90 font-semibold"
+                >
+                  Probar CV Builder
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+              </Link>
+            </div>
+
+            {/* Visual - Improved mock UI */}
+            <div className="relative">
+              {/* Main analysis card */}
+              <div className="bg-[#19282D] rounded-2xl p-6 lg:p-8 shadow-2xl border border-white/10">
+                {/* Header */}
+                <div className="flex items-center justify-between pb-5 border-b border-white/10 mb-6">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-lime/20 flex items-center justify-center">
+                      <FileText className="w-6 h-6 text-lime" />
                     </div>
                     <div>
-                      <p className="font-semibold">mi-cv.pdf</p>
-                      <p className="text-sm text-muted-foreground">Analizando...</p>
+                      <p className="font-semibold text-white">mi-curriculum.pdf</p>
+                      <p className="text-sm text-white/60">Análisis completado</p>
                     </div>
                   </div>
-                  <Sparkles className="w-5 h-5 text-accent animate-pulse" />
+                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-lime/20">
+                    <Sparkles className="w-4 h-4 text-lime" />
+                    <span className="text-xs font-medium text-lime">IA Activa</span>
+                  </div>
                 </div>
 
-                <div className="space-y-4">
-                  <div>
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm font-medium">Puntuación general</span>
-                      <span className="text-sm font-bold text-accent">85/100</span>
-                    </div>
-                    <div className="h-2 bg-secondary rounded-full overflow-hidden">
-                      <div className="h-full w-[85%] bg-accent rounded-full" />
-                    </div>
+                {/* Score section */}
+                <div className="mb-6">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-sm font-medium text-white/80">Puntuación general</span>
+                    <span className="text-2xl font-bold text-lime">85/100</span>
                   </div>
+                  <div className="h-3 bg-white/10 rounded-full overflow-hidden">
+                    <div className="h-full w-[85%] bg-gradient-to-r from-lime to-lime/70 rounded-full" />
+                  </div>
+                </div>
 
-                  <div className="grid grid-cols-2 gap-4 pt-2">
-                    <div className="p-3 rounded-lg bg-secondary/50">
-                      <p className="text-xs text-muted-foreground mb-1">Experiencia</p>
-                      <p className="text-lg font-bold">Excelente</p>
+                {/* Stats grid */}
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div className="p-4 rounded-xl bg-white/5 border border-white/10">
+                    <div className="flex items-center gap-2 mb-2">
+                      <TrendingUp className="w-4 h-4 text-lime" />
+                      <p className="text-xs text-white/60">Experiencia</p>
                     </div>
-                    <div className="p-3 rounded-lg bg-secondary/50">
-                      <p className="text-xs text-muted-foreground mb-1">Keywords</p>
-                      <p className="text-lg font-bold">12 detectadas</p>
+                    <p className="text-lg font-bold text-white">Excelente</p>
+                  </div>
+                  <div className="p-4 rounded-xl bg-white/5 border border-white/10">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Target className="w-4 h-4 text-coral" />
+                      <p className="text-xs text-white/60">Keywords ATS</p>
+                    </div>
+                    <p className="text-lg font-bold text-white">12 detectadas</p>
+                  </div>
+                </div>
+
+                {/* Recommendations preview */}
+                <div className="p-4 rounded-xl bg-lime/10 border border-lime/20">
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-lime/20 flex items-center justify-center flex-shrink-0">
+                      <Sparkles className="w-4 h-4 text-lime" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium text-white mb-1">Recomendación IA</p>
+                      <p className="text-xs text-white/70">Agrega métricas cuantificables a tu sección de logros para aumentar tu puntuación.</p>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* Floating elements */}
-            <div className="absolute -top-4 -right-4 px-4 py-2 rounded-full bg-accent text-accent-foreground text-sm font-medium shadow-lg animate-float">
-              ✨ IA activa
+              {/* Floating badge */}
+              <div className="absolute -top-4 -right-4 px-4 py-2 rounded-full bg-lime text-lime-foreground text-sm font-bold shadow-lg animate-float">
+                ✨ +15% empleabilidad
+              </div>
             </div>
           </div>
         </div>
