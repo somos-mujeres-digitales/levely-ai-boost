@@ -57,15 +57,15 @@ export default function Partners() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="section-padding gradient-hero">
+      <section className="section-padding bg-gradient-to-br from-secondary via-background to-blue/5 dark:from-[#19282D] dark:via-[#1a2a2f] dark:to-[#19282D]">
         <div className="container-levely">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue/10 dark:bg-blue/20 text-blue text-sm font-medium mb-6">
               <GraduationCap className="w-4 h-4" />
               Para instituciones educativas
             </div>
             
-            <h1 className="headline-xl mb-6">
+            <h1 className="headline-xl mb-6 text-foreground">
               Impulsa la empleabilidad de tus estudiantes
             </h1>
             
@@ -79,7 +79,7 @@ export default function Partners() {
                 Solicitar demo
                 <ArrowRight className="w-5 h-5" />
               </Button>
-              <Button variant="outline" size="lg">
+              <Button variant="outline" size="lg" className="dark:border-white/20 dark:text-white dark:hover:bg-white/10">
                 Descargar brochure
               </Button>
             </div>
@@ -91,10 +91,10 @@ export default function Partners() {
       <LogosSection />
 
       {/* Partner types */}
-      <section className="section-padding">
+      <section className="section-padding bg-background">
         <div className="container-levely">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="headline-lg">¿Para quién es?</h2>
+            <h2 className="headline-lg text-foreground">¿Para quién es?</h2>
             <p className="mt-4 text-lg text-muted-foreground">
               Soluciones adaptadas a diferentes tipos de instituciones
             </p>
@@ -106,10 +106,10 @@ export default function Partners() {
                 key={type.title}
                 className="text-center group"
               >
-                <div className="w-20 h-20 mx-auto rounded-2xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
-                  <type.icon className="w-10 h-10 text-accent" />
+                <div className="w-20 h-20 mx-auto rounded-2xl bg-blue/10 dark:bg-blue/20 flex items-center justify-center mb-6 group-hover:bg-blue/20 dark:group-hover:bg-blue/30 transition-colors">
+                  <type.icon className="w-10 h-10 text-blue" />
                 </div>
-                <h3 className="text-xl font-bold mb-3">{type.title}</h3>
+                <h3 className="text-xl font-bold mb-3 text-foreground">{type.title}</h3>
                 <p className="text-muted-foreground">{type.description}</p>
               </div>
             ))}
@@ -117,28 +117,38 @@ export default function Partners() {
         </div>
       </section>
 
-      {/* Benefits */}
-      <section className="section-padding bg-secondary/30">
+      {/* Benefits - Dynamic Cards */}
+      <section className="section-padding bg-secondary dark:bg-[#19282D]">
         <div className="container-levely">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="headline-lg">Beneficios para partners</h2>
+            <h2 className="headline-lg text-foreground">Beneficios para partners</h2>
             <p className="mt-4 text-lg text-muted-foreground">
               Herramientas y métricas para impulsar el éxito de tus estudiantes
             </p>
           </div>
 
           <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {benefits.map((benefit) => (
+            {benefits.map((benefit, index) => (
               <div
                 key={benefit.title}
-                className="flex gap-4 p-6 rounded-2xl border border-border bg-card"
+                className="group relative overflow-hidden rounded-2xl border border-border/50 bg-card dark:bg-slate-900/80 backdrop-blur-sm p-6 hover:border-blue/50 hover:shadow-xl hover:shadow-blue/5 transition-all duration-300"
               >
-                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
-                  <benefit.icon className="w-6 h-6 text-accent" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold mb-1">{benefit.title}</h3>
-                  <p className="text-muted-foreground text-sm">{benefit.description}</p>
+                {/* Floating number indicator */}
+                <span className="absolute top-4 right-4 text-6xl font-bold text-muted-foreground/5 group-hover:text-blue/10 transition-colors">
+                  0{index + 1}
+                </span>
+                
+                {/* Gradient overlay on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                
+                <div className="relative flex gap-4">
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue to-blue/80 flex items-center justify-center flex-shrink-0 shadow-lg shadow-blue/20 group-hover:scale-110 transition-transform">
+                    <benefit.icon className="w-7 h-7 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2 text-foreground group-hover:text-blue transition-colors">{benefit.title}</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{benefit.description}</p>
+                  </div>
                 </div>
               </div>
             ))}
@@ -147,24 +157,25 @@ export default function Partners() {
       </section>
 
       {/* CTA */}
-      <section className="section-padding">
+      <section className="section-padding bg-background">
         <div className="container-levely">
-          <div className="relative overflow-hidden rounded-3xl bg-primary text-primary-foreground p-8 sm:p-12 lg:p-16 text-center">
+          <div className="relative overflow-hidden rounded-3xl bg-primary dark:bg-gradient-to-br dark:from-blue dark:to-blue/80 text-primary-foreground p-8 sm:p-12 lg:p-16 text-center">
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-              <div className="absolute -top-20 -right-20 w-64 h-64 bg-accent/20 rounded-full blur-3xl" />
+              <div className="absolute -top-20 -right-20 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
+              <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
             </div>
 
             <div className="relative max-w-2xl mx-auto">
-              <h2 className="headline-lg mb-6">
+              <h2 className="headline-lg mb-6 text-white">
                 Conviértete en partner de Levely
               </h2>
-              <p className="text-lg text-primary-foreground/80 mb-8">
+              <p className="text-lg text-white/80 mb-8">
                 Agenda una llamada con nuestro equipo para explorar cómo podemos 
                 ayudar a mejorar los resultados de empleabilidad de tu institución.
               </p>
               <Button 
                 size="xl"
-                className="bg-primary-foreground text-primary hover:bg-primary-foreground/90"
+                className="bg-white text-primary hover:bg-white/90 dark:text-blue"
               >
                 Agendar llamada
                 <ArrowRight className="w-5 h-5" />
