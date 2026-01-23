@@ -25,9 +25,8 @@ export function HeroSection() {
             className="headline-xl max-w-4xl text-balance animate-fade-up"
             style={{ animationDelay: "0.1s" }}
           >
-            Optimiza tu perfil y vuélvete hasta{" "}
-            <span className="text-gradient">10× más empleable</span>{" "}
-            con IA.
+            Convierte tu perfil en{" "}
+            <span className="text-gradient">oportunidades reales</span>
           </h1>
 
           {/* Subheadline */}
