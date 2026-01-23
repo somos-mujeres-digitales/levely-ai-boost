@@ -32,11 +32,10 @@ export function HeroSection() {
 
           {/* Headline */}
           <h1 
-            className="headline-xl max-w-4xl text-balance animate-fade-up"
+            className="headline-xl max-w-4xl text-balance animate-fade-up text-white"
             style={{ animationDelay: "0.1s" }}
           >
-            Convierte tu perfil en{" "}
-            <span className="text-gradient">oportunidades reales</span>
+            Convierte tu perfil en oportunidades reales
           </h1>
 
           {/* Subheadline */}
