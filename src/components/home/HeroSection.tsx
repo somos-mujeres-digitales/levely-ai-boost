@@ -48,15 +48,12 @@ export function HeroSection() {
 
           {/* CTA */}
           <div 
-            className="mt-10 flex flex-col sm:flex-row gap-4 animate-fade-up"
+            className="mt-10 animate-fade-up"
             style={{ animationDelay: "0.3s" }}
           >
             <Button variant="hero" size="xl">
               Empezar
               <ArrowRight className="w-5 h-5 ml-1" />
-            </Button>
-            <Button variant="outline" size="xl" className="backdrop-blur-sm">
-              Ver cómo funciona
             </Button>
           </div>
 
