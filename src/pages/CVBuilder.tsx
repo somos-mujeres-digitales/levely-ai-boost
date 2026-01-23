@@ -5,7 +5,7 @@ import { HowItWorksSection } from "@/components/cv-builder/HowItWorksSection";
 import { HotSaleSection } from "@/components/cv-builder/HotSaleSection";
 import { VideoDemoSection } from "@/components/cv-builder/VideoDemoSection";
 import { FAQSection } from "@/components/cv-builder/FAQSection";
-import cvBuilderHeroMockup from "@/assets/cv-builder-hero-abstract.png";
+import cvBuilderHeroMockup from "@/assets/cv-builder-hero-dashboard.png";
 import {
   FileText,
   ArrowRight,
