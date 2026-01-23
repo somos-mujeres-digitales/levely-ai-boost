@@ -32,7 +32,7 @@ export function HeroSection() {
 
           {/* Headline */}
           <h1 
-            className="headline-xl max-w-4xl text-balance animate-fade-up text-white"
+            className="headline-xl max-w-4xl text-balance animate-fade-up text-[#1b292d] dark:text-white"
             style={{ animationDelay: "0.1s" }}
           >
             Convierte tu perfil en oportunidades reales
@@ -63,17 +63,23 @@ export function HeroSection() {
             style={{ animationDelay: "0.4s" }}
           >
             <div className="flex -space-x-2">
-              {[1, 2, 3, 4, 5].map((i) => (
-                <div
+              {[
+                "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face",
+                "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
+                "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=100&h=100&fit=crop&crop=face",
+                "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
+                "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face"
+              ].map((src, i) => (
+                <img
                   key={i}
-                  className="w-10 h-10 rounded-full bg-gradient-to-br from-accent/20 to-accent/40 border-2 border-background flex items-center justify-center text-xs font-medium backdrop-blur-sm"
-                >
-                  {String.fromCharCode(64 + i)}
-                </div>
+                  src={src}
+                  alt={`Usuario ${i + 1}`}
+                  className="w-10 h-10 rounded-full border-2 border-background object-cover"
+                />
               ))}
             </div>
             <p>
-              <span className="font-semibold text-foreground">+2,000</span> profesionales ya optimizaron su perfil
+              <span className="font-semibold text-foreground">+500</span> profesionales ya optimizaron su perfil
             </p>
           </div>
         </div>
