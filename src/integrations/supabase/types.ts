@@ -14,13 +14,248 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      cvs: {
+        Row: {
+          content: Json | null
+          created_at: string
+          file_url: string | null
+          id: string
+          is_optimized: boolean
+          title: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          content?: Json | null
+          created_at?: string
+          file_url?: string | null
+          id?: string
+          is_optimized?: boolean
+          title: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          content?: Json | null
+          created_at?: string
+          file_url?: string | null
+          id?: string
+          is_optimized?: boolean
+          title?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      evaluations: {
+        Row: {
+          created_at: string
+          cv_id: string | null
+          feedback: Json | null
+          growth_areas: Json | null
+          id: string
+          score: number | null
+          status: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          cv_id?: string | null
+          feedback?: Json | null
+          growth_areas?: Json | null
+          id?: string
+          score?: number | null
+          status?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          cv_id?: string | null
+          feedback?: Json | null
+          growth_areas?: Json | null
+          id?: string
+          score?: number | null
+          status?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "evaluations_cv_id_fkey"
+            columns: ["cv_id"]
+            isOneToOne: false
+            referencedRelation: "cvs"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      opportunities: {
+        Row: {
+          company: string | null
+          country: string | null
+          created_at: string
+          deadline: string | null
+          id: string
+          is_remote: boolean
+          is_viewed: boolean
+          location: string | null
+          match_score: number | null
+          title: string
+          type: string
+          user_id: string
+        }
+        Insert: {
+          company?: string | null
+          country?: string | null
+          created_at?: string
+          deadline?: string | null
+          id?: string
+          is_remote?: boolean
+          is_viewed?: boolean
+          location?: string | null
+          match_score?: number | null
+          title: string
+          type: string
+          user_id: string
+        }
+        Update: {
+          company?: string | null
+          country?: string | null
+          created_at?: string
+          deadline?: string | null
+          id?: string
+          is_remote?: boolean
+          is_viewed?: boolean
+          location?: string | null
+          match_score?: number | null
+          title?: string
+          type?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      plans: {
+        Row: {
+          created_at: string
+          has_community: boolean
+          has_radar_pro: boolean
+          id: string
+          max_cvs: number
+          max_evaluations: number
+          max_opportunities: number
+          name: string
+          price: number
+        }
+        Insert: {
+          created_at?: string
+          has_community?: boolean
+          has_radar_pro?: boolean
+          id?: string
+          max_cvs?: number
+          max_evaluations?: number
+          max_opportunities?: number
+          name: string
+          price: number
+        }
+        Update: {
+          created_at?: string
+          has_community?: boolean
+          has_radar_pro?: boolean
+          id?: string
+          max_cvs?: number
+          max_evaluations?: number
+          max_opportunities?: number
+          name?: string
+          price?: number
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          credits: number
+          employability_score: number | null
+          full_name: string | null
+          id: string
+          industry: string | null
+          plan_id: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          credits?: number
+          employability_score?: number | null
+          full_name?: string | null
+          id?: string
+          industry?: string | null
+          plan_id?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          credits?: number
+          employability_score?: number | null
+          full_name?: string | null
+          id?: string
+          industry?: string | null
+          plan_id?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "profiles_plan_id_fkey"
+            columns: ["plan_id"]
+            isOneToOne: false
+            referencedRelation: "plans"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      usage_stats: {
+        Row: {
+          cvs_created: number
+          evaluations_used: number
+          id: string
+          opportunities_viewed: number
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          cvs_created?: number
+          evaluations_used?: number
+          id?: string
+          opportunities_viewed?: number
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          cvs_created?: number
+          evaluations_used?: number
+          id?: string
+          opportunities_viewed?: number
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      get_user_plan_limits: {
+        Args: { p_user_id: string }
+        Returns: {
+          has_community: boolean
+          has_radar_pro: boolean
+          max_cvs: number
+          max_evaluations: number
+          max_opportunities: number
+          plan_name: string
+        }[]
+      }
     }
     Enums: {
       [_ in never]: never
