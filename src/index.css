@@ -35,9 +35,9 @@
     --accent: 192 27% 14%;
     --accent-foreground: 0 0% 100%;
     
-    /* Lime accent for CV Builder */
-    --lime: 83 100% 74%;
-    --lime-foreground: 192 27% 14%;
+    /* Lime accent for CV Builder - use teal in light mode for better contrast */
+    --lime: 192 27% 14%;
+    --lime-foreground: 0 0% 100%;
     
     /* Blue accent for Home */
     --blue: 222 91% 67%;
