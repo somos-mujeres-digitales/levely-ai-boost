@@ -7,6 +7,7 @@ import { ThemeProvider } from "next-themes";
 import { AuthProvider } from "@/contexts/AuthContext";
 import Index from "./pages/Index";
 import CVBuilder from "./pages/CVBuilder";
+import CVBuilderFlow from "./pages/CVBuilderFlow";
 import CareerAccelerator from "./pages/CareerAccelerator";
 import Partners from "./pages/Partners";
 import Empresas from "./pages/Empresas";
@@ -38,6 +39,7 @@ const App = () => (
               <Route path="/dashboard/cvs" element={<CVs />} />
               <Route path="/dashboard/feedback" element={<Feedback />} />
               <Route path="/cv-builder" element={<CVBuilder />} />
+              <Route path="/cv-builder/analyze" element={<CVBuilderFlow />} />
               <Route path="/career-accelerator" element={<CareerAccelerator />} />
               <Route path="/partners" element={<Partners />} />
               <Route path="/empresas" element={<Empresas />} />

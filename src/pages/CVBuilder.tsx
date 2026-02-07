@@ -6,6 +6,7 @@ import { HotSaleSection } from "@/components/cv-builder/HotSaleSection";
 import { VideoDemoSection } from "@/components/cv-builder/VideoDemoSection";
 import { FAQSection } from "@/components/cv-builder/FAQSection";
 import { HeroCards } from "@/components/cv-builder/HeroCards";
+import { Link } from "react-router-dom";
 import {
   FileText,
   ArrowRight,
@@ -34,9 +35,11 @@ export default function CVBuilder() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="lime" size="xl">
-                  Analizar mi CV
-                  <ArrowRight className="w-5 h-5" />
+                <Button variant="lime" size="xl" asChild>
+                  <Link to="/cv-builder/analyze">
+                    Analizar mi CV
+                    <ArrowRight className="w-5 h-5" />
+                  </Link>
                 </Button>
                 <Button variant="outline" size="lg">
                   Ver ejemplo
