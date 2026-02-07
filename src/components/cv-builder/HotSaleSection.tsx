@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Check, Zap, ArrowRight, Sparkles } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const features = [
   "Análisis personalizado de tu perfil profesional",
@@ -80,9 +81,11 @@ export function HotSaleSection() {
                     </p>
                   </div>
 
-                  <Button variant="lime" size="xl" className="w-full text-lg py-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
-                    Analizar mi CV
-                    <ArrowRight className="w-5 h-5 ml-2" />
+                  <Button variant="lime" size="xl" className="w-full text-lg py-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]" asChild>
+                    <Link to="/cv-builder/analyze">
+                      Analizar mi CV
+                      <ArrowRight className="w-5 h-5 ml-2" />
+                    </Link>
                   </Button>
 
                   <p className="text-xs text-muted-foreground text-center">
