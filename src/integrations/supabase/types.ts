@@ -14,6 +14,68 @@ export type Database = {
   }
   public: {
     Tables: {
+      cv_analyses: {
+        Row: {
+          created_at: string
+          cv_id: string | null
+          employability_score: number | null
+          full_feedback: Json | null
+          id: string
+          opportunities: Json | null
+          optimized_versions: Json | null
+          preview_growth_area: string | null
+          preview_insight: string | null
+          preview_opportunity: Json | null
+          recommendations: Json | null
+          roadmap: Json | null
+          status: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          cv_id?: string | null
+          employability_score?: number | null
+          full_feedback?: Json | null
+          id?: string
+          opportunities?: Json | null
+          optimized_versions?: Json | null
+          preview_growth_area?: string | null
+          preview_insight?: string | null
+          preview_opportunity?: Json | null
+          recommendations?: Json | null
+          roadmap?: Json | null
+          status?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          cv_id?: string | null
+          employability_score?: number | null
+          full_feedback?: Json | null
+          id?: string
+          opportunities?: Json | null
+          optimized_versions?: Json | null
+          preview_growth_area?: string | null
+          preview_insight?: string | null
+          preview_opportunity?: Json | null
+          recommendations?: Json | null
+          roadmap?: Json | null
+          status?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "cv_analyses_cv_id_fkey"
+            columns: ["cv_id"]
+            isOneToOne: false
+            referencedRelation: "cvs"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       cvs: {
         Row: {
           content: Json | null
@@ -209,6 +271,47 @@ export type Database = {
             columns: ["plan_id"]
             isOneToOne: false
             referencedRelation: "plans"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      purchases: {
+        Row: {
+          amount: number
+          analysis_id: string | null
+          created_at: string
+          credits_added: number
+          id: string
+          plan_name: string
+          status: string
+          user_id: string
+        }
+        Insert: {
+          amount: number
+          analysis_id?: string | null
+          created_at?: string
+          credits_added?: number
+          id?: string
+          plan_name: string
+          status?: string
+          user_id: string
+        }
+        Update: {
+          amount?: number
+          analysis_id?: string | null
+          created_at?: string
+          credits_added?: number
+          id?: string
+          plan_name?: string
+          status?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "purchases_analysis_id_fkey"
+            columns: ["analysis_id"]
+            isOneToOne: false
+            referencedRelation: "cv_analyses"
             referencedColumns: ["id"]
           },
         ]
