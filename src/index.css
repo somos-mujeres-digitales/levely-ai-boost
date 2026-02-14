@@ -88,8 +88,37 @@
     --academy-border: 168 15% 22%;
   }
 
-  /* Academy theme scope — always dark regardless of system theme */
+  /* Academy theme scope — light mode: #F5F5F0 bg, #19282D text */
   .academy-theme {
+    --background: 60 20% 95%;
+    --foreground: 195 29% 14%;
+    --card: 60 20% 97%;
+    --card-foreground: 195 29% 14%;
+    --popover: 60 20% 97%;
+    --popover-foreground: 195 29% 14%;
+    --primary: 195 29% 14%;
+    --primary-foreground: 60 20% 95%;
+    --secondary: 60 10% 90%;
+    --secondary-foreground: 195 29% 14%;
+    --muted: 60 10% 91%;
+    --muted-foreground: 195 20% 40%;
+    --accent: 195 29% 14%;
+    --accent-foreground: 60 20% 95%;
+    --border: 60 10% 86%;
+    --input: 60 10% 86%;
+    --ring: 195 29% 14%;
+    --sidebar-background: 195 29% 14%;
+    --sidebar-foreground: 60 20% 95%;
+    --sidebar-primary: 83 82% 71%;
+    --sidebar-primary-foreground: 195 29% 14%;
+    --sidebar-accent: 195 25% 20%;
+    --sidebar-accent-foreground: 60 20% 95%;
+    --sidebar-border: 195 20% 22%;
+    --sidebar-ring: 83 82% 71%;
+  }
+
+  /* Academy dark mode */
+  .dark .academy-theme {
     --background: 168 28% 12%;
     --foreground: 0 0% 100%;
     --card: 168 22% 16%;
