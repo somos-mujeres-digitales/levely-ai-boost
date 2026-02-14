@@ -15,8 +15,10 @@ export function AcademyLayout({ children }: { children: ReactNode }) {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ background: "hsl(168 28% 12%)" }}>
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2" style={{ borderColor: "#CAF374" }} />
+      <div className="academy-theme">
+        <div className="min-h-screen flex items-center justify-center bg-background">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-accent" />
+        </div>
       </div>
     );
   }
@@ -24,16 +26,18 @@ export function AcademyLayout({ children }: { children: ReactNode }) {
   if (!user) return null;
 
   return (
-    <SidebarProvider>
-      <div className="min-h-screen flex w-full" style={{ background: "hsl(168 28% 12%)" }}>
-        <AcademySidebar />
-        <div className="flex-1 flex flex-col min-h-screen">
-          <AcademyTopbar />
-          <main className="flex-1 p-6 lg:p-8 overflow-auto">
-            {children}
-          </main>
+    <div className="academy-theme">
+      <SidebarProvider>
+        <div className="min-h-screen flex w-full bg-background text-foreground">
+          <AcademySidebar />
+          <div className="flex-1 flex flex-col min-h-screen">
+            <AcademyTopbar />
+            <main className="flex-1 p-6 lg:p-8 overflow-auto">
+              {children}
+            </main>
+          </div>
         </div>
-      </div>
-    </SidebarProvider>
+      </SidebarProvider>
+    </div>
   );
 }

@@ -32,21 +32,17 @@ export function AcademySidebar() {
 
   return (
     <Sidebar
-      className={cn("border-r", collapsed ? "w-16" : "w-60")}
-      style={{
-        background: "hsl(168 28% 10%)",
-        borderColor: "hsl(168 15% 20%)",
-      }}
+      className={cn("border-r border-border bg-sidebar", collapsed ? "w-16" : "w-60")}
     >
       <SidebarContent className="flex flex-col h-full">
         {/* Logo */}
-        <div className="p-5 border-b" style={{ borderColor: "hsl(168 15% 20%)" }}>
+        <div className="p-5 border-b border-border">
           <Link to="/academy" className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: "#CAF374" }}>
-              <span className="text-sm font-black" style={{ color: "hsl(168 28% 12%)" }}>L</span>
+            <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-accent">
+              <span className="text-sm font-black text-accent-foreground">L</span>
             </div>
             {!collapsed && (
-              <span className="text-lg font-bold tracking-tight text-white">
+              <span className="text-lg font-bold tracking-tight text-sidebar-foreground">
                 Levely <span className="text-xs font-medium opacity-60">Academy</span>
               </span>
             )}
@@ -64,14 +60,9 @@ export function AcademySidebar() {
                       className={cn(
                         "flex items-center gap-3 px-4 py-2.5 rounded-lg transition-all duration-200 mx-2",
                         isActive(item.href)
-                          ? "font-semibold"
-                          : "hover:opacity-100 opacity-60"
+                          ? "font-semibold bg-sidebar-accent text-accent"
+                          : "text-sidebar-foreground/60 hover:text-sidebar-foreground"
                       )}
-                      style={
-                        isActive(item.href)
-                          ? { background: "hsl(168 22% 18%)", color: "#CAF374" }
-                          : { color: "#fff" }
-                      }
                     >
                       <item.icon className="h-5 w-5 shrink-0" />
                       {!collapsed && <span className="text-sm">{item.title}</span>}
@@ -85,12 +76,11 @@ export function AcademySidebar() {
 
         {/* CTA */}
         {!collapsed && (
-          <div className="mx-4 mb-4 p-4 rounded-xl" style={{ background: "hsl(168 22% 16%)", border: "1px solid hsl(168 15% 22%)" }}>
-            <p className="text-xs font-medium text-white/80 mb-2">¿Quieres ir más allá?</p>
+          <div className="mx-4 mb-4 p-4 rounded-xl bg-card border border-border">
+            <p className="text-xs font-medium text-foreground/80 mb-2">¿Quieres ir más allá?</p>
             <Link
               to="/career-accelerator"
-              className="text-xs font-semibold transition-colors hover:underline"
-              style={{ color: "#CAF374" }}
+              className="text-xs font-semibold transition-colors hover:underline text-accent"
             >
               Descubre Career Accelerator →
             </Link>

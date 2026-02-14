@@ -88,6 +88,35 @@
     --academy-border: 168 15% 22%;
   }
 
+  /* Academy theme scope — always dark regardless of system theme */
+  .academy-theme {
+    --background: 168 28% 12%;
+    --foreground: 0 0% 100%;
+    --card: 168 22% 16%;
+    --card-foreground: 0 0% 100%;
+    --popover: 168 22% 16%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 83 82% 71%;
+    --primary-foreground: 168 28% 12%;
+    --secondary: 168 22% 18%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 168 15% 24%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 83 82% 71%;
+    --accent-foreground: 168 28% 12%;
+    --border: 168 15% 22%;
+    --input: 168 15% 22%;
+    --ring: 83 82% 71%;
+    --sidebar-background: 168 28% 10%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 83 82% 71%;
+    --sidebar-primary-foreground: 168 28% 12%;
+    --sidebar-accent: 168 22% 18%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 168 15% 20%;
+    --sidebar-ring: 83 82% 71%;
+  }
+
   .dark {
     /* #19282D = HSL 195 29% 14% */
     --background: 195 29% 14%;
