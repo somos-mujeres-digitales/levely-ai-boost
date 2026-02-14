@@ -16,30 +16,48 @@ export type Database = {
     Tables: {
       academy_experts: {
         Row: {
+          bio: string | null
           created_at: string
+          email: string | null
           id: string
+          industries: string[] | null
+          languages: string[] | null
+          linkedin_url: string | null
           name: string
           photo_url: string | null
           role: string | null
           route_ids: string[] | null
+          specialties: string[] | null
           specialty: string | null
         }
         Insert: {
+          bio?: string | null
           created_at?: string
+          email?: string | null
           id?: string
+          industries?: string[] | null
+          languages?: string[] | null
+          linkedin_url?: string | null
           name: string
           photo_url?: string | null
           role?: string | null
           route_ids?: string[] | null
+          specialties?: string[] | null
           specialty?: string | null
         }
         Update: {
+          bio?: string | null
           created_at?: string
+          email?: string | null
           id?: string
+          industries?: string[] | null
+          languages?: string[] | null
+          linkedin_url?: string | null
           name?: string
           photo_url?: string | null
           role?: string | null
           route_ids?: string[] | null
+          specialties?: string[] | null
           specialty?: string | null
         }
         Relationships: []
