@@ -18,6 +18,13 @@ import Creditos from "./pages/app/Creditos";
 import Oportunidades from "./pages/app/Oportunidades";
 import CVs from "./pages/app/CVs";
 import Feedback from "./pages/app/Feedback";
+import AcademyDashboard from "./pages/academy/AcademyDashboard";
+import AcademyRoutes from "./pages/academy/AcademyRoutes";
+import AcademyRouteDetail from "./pages/academy/AcademyRouteDetail";
+import AcademyExperts from "./pages/academy/AcademyExperts";
+import AcademyResources from "./pages/academy/AcademyResources";
+import AcademyProfile from "./pages/academy/AcademyProfile";
+import AcademyLogin from "./pages/academy/AcademyLogin";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -44,6 +51,14 @@ const App = () => (
               <Route path="/partners" element={<Partners />} />
               <Route path="/empresas" element={<Empresas />} />
               <Route path="/resources" element={<Resources />} />
+              {/* Academy */}
+              <Route path="/academy" element={<AcademyDashboard />} />
+              <Route path="/academy/login" element={<AcademyLogin />} />
+              <Route path="/academy/routes" element={<AcademyRoutes />} />
+              <Route path="/academy/routes/:routeId" element={<AcademyRouteDetail />} />
+              <Route path="/academy/experts" element={<AcademyExperts />} />
+              <Route path="/academy/resources" element={<AcademyResources />} />
+              <Route path="/academy/profile" element={<AcademyProfile />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

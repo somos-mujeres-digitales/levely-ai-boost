@@ -14,6 +14,232 @@ export type Database = {
   }
   public: {
     Tables: {
+      academy_experts: {
+        Row: {
+          created_at: string
+          id: string
+          name: string
+          photo_url: string | null
+          role: string | null
+          route_ids: string[] | null
+          specialty: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          name: string
+          photo_url?: string | null
+          role?: string | null
+          route_ids?: string[] | null
+          specialty?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          name?: string
+          photo_url?: string | null
+          role?: string | null
+          route_ids?: string[] | null
+          specialty?: string | null
+        }
+        Relationships: []
+      }
+      academy_lessons: {
+        Row: {
+          created_at: string
+          duration_minutes: number | null
+          id: string
+          module_id: string
+          resource_url: string | null
+          sort_order: number
+          title: string
+          type: string
+          video_url: string | null
+        }
+        Insert: {
+          created_at?: string
+          duration_minutes?: number | null
+          id?: string
+          module_id: string
+          resource_url?: string | null
+          sort_order?: number
+          title: string
+          type?: string
+          video_url?: string | null
+        }
+        Update: {
+          created_at?: string
+          duration_minutes?: number | null
+          id?: string
+          module_id?: string
+          resource_url?: string | null
+          sort_order?: number
+          title?: string
+          type?: string
+          video_url?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "academy_lessons_module_id_fkey"
+            columns: ["module_id"]
+            isOneToOne: false
+            referencedRelation: "academy_modules"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      academy_modules: {
+        Row: {
+          created_at: string
+          description: string | null
+          id: string
+          route_id: string
+          sort_order: number
+          title: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          route_id: string
+          sort_order?: number
+          title: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          route_id?: string
+          sort_order?: number
+          title?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "academy_modules_route_id_fkey"
+            columns: ["route_id"]
+            isOneToOne: false
+            referencedRelation: "academy_routes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      academy_resources: {
+        Row: {
+          category: string
+          created_at: string
+          description: string | null
+          file_type: string | null
+          file_url: string | null
+          id: string
+          title: string
+        }
+        Insert: {
+          category?: string
+          created_at?: string
+          description?: string | null
+          file_type?: string | null
+          file_url?: string | null
+          id?: string
+          title: string
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          description?: string | null
+          file_type?: string | null
+          file_url?: string | null
+          id?: string
+          title?: string
+        }
+        Relationships: []
+      }
+      academy_routes: {
+        Row: {
+          category: string
+          cover_image: string | null
+          created_at: string
+          description: string | null
+          duration_hours: number
+          id: string
+          is_published: boolean
+          level: string
+          modules_count: number
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          category?: string
+          cover_image?: string | null
+          created_at?: string
+          description?: string | null
+          duration_hours?: number
+          id?: string
+          is_published?: boolean
+          level?: string
+          modules_count?: number
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          category?: string
+          cover_image?: string | null
+          created_at?: string
+          description?: string | null
+          duration_hours?: number
+          id?: string
+          is_published?: boolean
+          level?: string
+          modules_count?: number
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      academy_user_progress: {
+        Row: {
+          completed: boolean
+          completed_at: string | null
+          id: string
+          lesson_id: string | null
+          route_id: string
+          started_at: string
+          user_id: string
+        }
+        Insert: {
+          completed?: boolean
+          completed_at?: string | null
+          id?: string
+          lesson_id?: string | null
+          route_id: string
+          started_at?: string
+          user_id: string
+        }
+        Update: {
+          completed?: boolean
+          completed_at?: string | null
+          id?: string
+          lesson_id?: string | null
+          route_id?: string
+          started_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "academy_user_progress_lesson_id_fkey"
+            columns: ["lesson_id"]
+            isOneToOne: false
+            referencedRelation: "academy_lessons"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "academy_user_progress_route_id_fkey"
+            columns: ["route_id"]
+            isOneToOne: false
+            referencedRelation: "academy_routes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       cv_analyses: {
         Row: {
           created_at: string
