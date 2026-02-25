@@ -187,3 +187,72 @@ export function useAcademyExperts() {
     },
   });
 }
+
+export function useAcademyEvents(eventType?: string) {
+  return useQuery({
+    queryKey: ["academy_events", eventType],
+    queryFn: async () => {
+      let query = supabase.from("academy_events" as any).select("*").order("event_date", { ascending: true });
+      if (eventType && eventType !== "all") query = query.eq("event_type", eventType);
+      const { data, error } = await query;
+      if (error) throw error;
+      return data as any[];
+    },
+  });
+}
+
+export function useUserEventRegistrations() {
+  const { user } = useAuth();
+  return useQuery({
+    queryKey: ["academy_event_registrations", user?.id],
+    queryFn: async () => {
+      if (!user) return [];
+      const { data, error } = await supabase
+        .from("academy_event_registrations" as any)
+        .select("*")
+        .eq("user_id", user.id);
+      if (error) throw error;
+      return data as any[];
+    },
+    enabled: !!user,
+  });
+}
+
+export function useRegisterForEvent() {
+  const { user } = useAuth();
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: async (eventId: string) => {
+      if (!user) throw new Error("Not authenticated");
+      const { error } = await supabase.from("academy_event_registrations" as any).insert({
+        user_id: user.id,
+        event_id: eventId,
+      });
+      if (error) throw error;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["academy_event_registrations"] });
+    },
+  });
+}
+
+export function useAcademyMembership() {
+  const { user } = useAuth();
+  return useQuery({
+    queryKey: ["academy_membership", user?.id],
+    queryFn: async () => {
+      if (!user) return null;
+      const { data, error } = await supabase
+        .from("academy_memberships" as any)
+        .select("*")
+        .eq("user_id", user.id)
+        .eq("status", "active")
+        .order("created_at", { ascending: false })
+        .limit(1)
+        .maybeSingle();
+      if (error) throw error;
+      return data as any;
+    },
+    enabled: !!user,
+  });
+}

@@ -1,10 +1,12 @@
 import { AcademyLayout } from "@/components/academy/AcademyLayout";
 import { useProfile } from "@/hooks/useUserData";
-import { useAcademyRoutes, useActiveRoutes, useUserProgress } from "@/hooks/useAcademyData";
+import { useAcademyRoutes, useActiveRoutes, useUserProgress, useAcademyEvents } from "@/hooks/useAcademyData";
 import { useAllLessonsForRoute } from "@/hooks/useAcademyData";
 import { Link } from "react-router-dom";
-import { ArrowRight, Clock, BarChart3, Play, BookOpen } from "lucide-react";
+import { ArrowRight, Clock, BarChart3, Play, BookOpen, Calendar, Sparkles } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
+import { format } from "date-fns";
+import { es } from "date-fns/locale";
 
 function ActiveRouteCard({ route }: { route: any }) {
   const { data: progress } = useUserProgress(route.id);
@@ -65,6 +67,9 @@ export default function AcademyDashboard() {
   const { data: profile } = useProfile();
   const { data: activeRoutes } = useActiveRoutes();
   const { data: allRoutes } = useAcademyRoutes();
+  const { data: events } = useAcademyEvents();
+
+  const upcomingEvents = events?.filter((e: any) => new Date(e.event_date) > new Date()).slice(0, 3);
 
   const firstName = profile?.full_name?.split(" ")[0] || "Explorador";
 
@@ -98,6 +103,36 @@ export default function AcademyDashboard() {
             <p className="text-foreground/50 text-sm">Aún no has iniciado ninguna ruta.</p>
             <p className="text-foreground/30 text-xs mt-1">Explora las rutas disponibles para comenzar.</p>
           </div>
+        )}
+
+        {/* Upcoming Events */}
+        {upcomingEvents && upcomingEvents.length > 0 && (
+          <section>
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-lg font-semibold text-foreground/80">Próximos eventos</h2>
+              <Link to="/academy/events" className="text-xs font-semibold text-accent hover:underline">
+                Ver todos →
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {upcomingEvents.map((event: any) => (
+                <Link
+                  key={event.id}
+                  to="/academy/events"
+                  className="rounded-xl p-4 bg-card border border-border hover:border-accent/30 transition-all"
+                >
+                  <div className="flex items-center gap-2 mb-2">
+                    <Calendar className="h-3.5 w-3.5 text-accent" />
+                    <span className="text-[10px] font-semibold uppercase tracking-widest text-foreground/40">
+                      {format(new Date(event.event_date), "dd MMM · HH:mm", { locale: es })}
+                    </span>
+                  </div>
+                  <h4 className="text-sm font-semibold text-foreground line-clamp-1">{event.title}</h4>
+                  <p className="text-xs text-foreground/40 mt-1">{event.event_type}</p>
+                </Link>
+              ))}
+            </div>
+          </section>
         )}
 
         {/* Explore Routes */}
