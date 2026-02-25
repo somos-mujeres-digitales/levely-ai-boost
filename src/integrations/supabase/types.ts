@@ -14,6 +14,89 @@ export type Database = {
   }
   public: {
     Tables: {
+      academy_event_registrations: {
+        Row: {
+          event_id: string
+          id: string
+          registered_at: string
+          user_id: string
+        }
+        Insert: {
+          event_id: string
+          id?: string
+          registered_at?: string
+          user_id: string
+        }
+        Update: {
+          event_id?: string
+          id?: string
+          registered_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "academy_event_registrations_event_id_fkey"
+            columns: ["event_id"]
+            isOneToOne: false
+            referencedRelation: "academy_events"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      academy_events: {
+        Row: {
+          cover_image: string | null
+          created_at: string
+          description: string | null
+          duration_minutes: number | null
+          event_date: string
+          event_type: string
+          id: string
+          is_published: boolean | null
+          is_recorded: boolean | null
+          max_attendees: number | null
+          meeting_url: string | null
+          recording_url: string | null
+          speaker_name: string | null
+          speaker_role: string | null
+          title: string
+        }
+        Insert: {
+          cover_image?: string | null
+          created_at?: string
+          description?: string | null
+          duration_minutes?: number | null
+          event_date: string
+          event_type?: string
+          id?: string
+          is_published?: boolean | null
+          is_recorded?: boolean | null
+          max_attendees?: number | null
+          meeting_url?: string | null
+          recording_url?: string | null
+          speaker_name?: string | null
+          speaker_role?: string | null
+          title: string
+        }
+        Update: {
+          cover_image?: string | null
+          created_at?: string
+          description?: string | null
+          duration_minutes?: number | null
+          event_date?: string
+          event_type?: string
+          id?: string
+          is_published?: boolean | null
+          is_recorded?: boolean | null
+          max_attendees?: number | null
+          meeting_url?: string | null
+          recording_url?: string | null
+          speaker_name?: string | null
+          speaker_role?: string | null
+          title?: string
+        }
+        Relationships: []
+      }
       academy_experts: {
         Row: {
           bio: string | null
@@ -105,6 +188,39 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      academy_memberships: {
+        Row: {
+          created_at: string
+          expires_at: string
+          id: string
+          plan: string
+          price_usd: number
+          started_at: string
+          status: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          expires_at?: string
+          id?: string
+          plan?: string
+          price_usd?: number
+          started_at?: string
+          status?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          expires_at?: string
+          id?: string
+          plan?: string
+          price_usd?: number
+          started_at?: string
+          status?: string
+          user_id?: string
+        }
+        Relationships: []
       }
       academy_modules: {
         Row: {
