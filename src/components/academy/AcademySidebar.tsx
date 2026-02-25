@@ -9,14 +9,17 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar";
-import { Home, Route, Users, FolderOpen, User } from "lucide-react";
+import { Home, Route, Users, FolderOpen, User, Calendar, Map, CreditCard } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navItems = [
   { title: "Inicio", href: "/academy", icon: Home },
+  { title: "Roadmap", href: "/academy/roadmap", icon: Map },
   { title: "Rutas", href: "/academy/routes", icon: Route },
+  { title: "Eventos", href: "/academy/events", icon: Calendar },
   { title: "Expertos", href: "/academy/experts", icon: Users },
   { title: "Recursos", href: "/academy/resources", icon: FolderOpen },
+  { title: "Pricing", href: "/academy/pricing", icon: CreditCard },
   { title: "Mi perfil", href: "/academy/profile", icon: User },
 ];
 
